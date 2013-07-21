@@ -24,6 +24,7 @@
 + (UIColor *)topSeparatorColor;
 + (UIColor *)bottomSeparatorColor;
 + (UIColor *)tableViewHeaderColor;
++ (UIColor *)tableViewCellTextColor;
 + (UIColor *)tableViewHeaderShadowColor;
 + (UIColor *)primaryTextColor;
 + (UIColor *)secondaryTextColor;
@@ -35,6 +36,9 @@
 + (UIImage *)navigationBarBackgroundImage;
 + (UIColor *)navigationBarTextColor;
 + (UIColor *)navigationBarTextShadowColor;
++ (UIColor *)helpfulBarTextColor;
++ (UIColor *)helpfulBarYesButtonTint;
++ (UIColor *)helpfulBarNoButtonTint;
 
 /**
  * The background color for all table views, etc.
@@ -63,6 +67,13 @@
  * Default: blue-gray
  */
 - (UIColor *)tableViewHeaderColor;
+
+/**
+ * Text color for labels in category lists, article lists, etc.
+ *
+ * Default: black
+ */
+- (UIColor *)tableViewCellTextColor;
 
 /**
  * Shadow color for section headings on the welcome view. You may change this to [UIColor clearColor] if you don't want a text shadow.
@@ -140,5 +151,26 @@
  * Default: nil (platform default).
  */
 - (UIColor *)navigationBarTextShadowColor;
+
+/**
+ * Text color for prompt in "was this helpful" bar
+ *
+ * Default: dark-gray
+ */
+- (UIColor *)helpfulBarTextColor;
+
+/**
+ * Tint for the yes button in the helpful bar
+ *
+ * Default: blue
+ */
+- (UIColor *)helpfulBarYesButtonTint;
+
+/**
+ * Tint for the no button in the helpful bar
+ *
+ * Default: blue-gray
+ */
+- (UIColor *)helpfulBarNoButtonTint;
 
 @end

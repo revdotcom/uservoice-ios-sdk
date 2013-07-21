@@ -53,7 +53,7 @@
     UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, helpfulBar.bounds.size.width - 100, 40)] autorelease];
     label.text = NSLocalizedStringFromTable(@"Was this article helpful?", @"UserVoice", nil);
     label.font = [UIFont boldSystemFontOfSize:13];
-    label.textColor = [UIColor colorWithRed:0.41f green:0.42f blue:0.43f alpha:1.0f];
+    label.textColor = [UVStyleSheet helpfulBarTextColor];
     label.backgroundColor = [UIColor clearColor];
     label.textAlignment = UITextAlignmentCenter;
     label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -62,11 +62,11 @@
     UIBarButtonItem *yesItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Yes!", @"UserVoice", nil) style:UIBarButtonItemStyleDone target:self action:@selector(yesButtonTapped)] autorelease];
     yesItem.width = 50;
     if ([yesItem respondsToSelector:@selector(setTintColor:)])
-        yesItem.tintColor = [UIColor colorWithRed:0.42f green:0.64f blue:0.85f alpha:1.0f];
+        yesItem.tintColor = [UVStyleSheet helpfulBarYesButtonTint];
     UIBarButtonItem *noItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"No", @"UserVoice", nil) style:UIBarButtonItemStyleBordered target:self action:@selector(noButtonTapped)] autorelease];
     noItem.width = 50;
     if ([noItem respondsToSelector:@selector(setTintColor:)])
-        noItem.tintColor = [UIColor colorWithRed:0.46f green:0.55f blue:0.66f alpha:1.0f];
+        noItem.tintColor = [UVStyleSheet helpfulBarNoButtonTint];
     helpfulBar.items = @[space, yesItem, noItem];
     [self.view addSubview:helpfulBar];
 }

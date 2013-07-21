@@ -51,6 +51,7 @@
     cell.backgroundColor = [UIColor whiteColor];
     UVArticle *article = [articles objectAtIndex:indexPath.row];
     cell.textLabel.text = article.question;
+    cell.textLabel.textColor = [UVStyleSheet tableViewCellTextColor];
     cell.imageView.image = [UIImage imageNamed:@"uv_article.png"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.numberOfLines = 2;

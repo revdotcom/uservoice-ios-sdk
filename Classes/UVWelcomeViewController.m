@@ -74,6 +74,7 @@
         cell.textLabel.text = topic.name;
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.textColor = [UVStyleSheet tableViewCellTextColor];
 }
 
 - (void)customizeCellForArticle:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
@@ -193,6 +194,32 @@
         return NSLocalizedStringFromTable(@"Knowledge Base", @"UserVoice", nil);
 }
 
+- (UIView *) tableView:(UITableView *)theTableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *text = [theTableView.dataSource tableView:theTableView titleForHeaderInSection:section];
+    if (text) {
+        UIView *headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, theTableView.bounds.size.width, 30)] autorelease];
+
+        UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(18, 5, [text length] * 18, 30)] autorelease];
+        label.text = text;
+        label.font = [UIFont boldSystemFontOfSize:18];
+        label.textColor = [UVStyleSheet tableViewHeaderColor];
+        label.shadowColor = [UVStyleSheet tableViewHeaderShadowColor];
+        label.shadowOffset = CGSizeMake(0.0f, 1.0f);
+        label.backgroundColor = [UIColor clearColor];
+        [headerView addSubview:label];
+
+        return headerView;
+    } else {
+        return nil;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
+}
+
 - (void)postIdeaTapped {
     [self clearFlash];
     [self presentModalViewController:[UVNewSuggestionViewController viewController]];
@@ -301,7 +328,7 @@
 
     self.scrollView = [[[UIScrollView alloc] initWithFrame:[self contentFrame]] autorelease];
     self.view = scrollView;
-    scrollView.backgroundColor = [UIColor colorWithRed:0.94f green:0.95f blue:0.95f alpha:1.0f];
+    scrollView.backgroundColor = [UVStyleSheet backgroundColor];
     scrollView.alwaysBounceVertical = YES;
 
     if ([UVSession currentSession].config.showKnowledgeBase) {

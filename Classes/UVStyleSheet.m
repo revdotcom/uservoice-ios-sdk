@@ -105,6 +105,10 @@ static UVStyleSheet *styleSheet;
     return [[self styleSheet] tableViewHeaderColor];
 }
 
++ (UIColor *)tableViewCellTextColor {
+    return [[self styleSheet] tableViewCellTextColor];
+}
+
 + (UIColor *)tableViewHeaderShadowColor {
     return [[self styleSheet] tableViewHeaderShadowColor];
 }
@@ -119,6 +123,18 @@ static UVStyleSheet *styleSheet;
 
 + (UIColor *)alertTextColor {
     return [[self styleSheet] alertTextColor];
+}
+
++ (UIColor *)helpfulBarTextColor {
+    return [[self styleSheet] helpfulBarTextColor];
+}
+
++ (UIColor *)helpfulBarYesButtonTint {
+    return [[self styleSheet] helpfulBarYesButtonTint];
+}
+
++ (UIColor *)helpfulBarNoButtonTint {
+    return [[self styleSheet] helpfulBarNoButtonTint];
 }
 
 - (UIColor *)primaryTextColor {
@@ -153,6 +169,10 @@ static UVStyleSheet *styleSheet;
     return [UIColor colorWithRed:0.298 green:0.337 blue:0.424 alpha:1.0];
 }
 
+- (UIColor *)tableViewCellTextColor {
+    return [UIColor blackColor];
+}
+
 - (UIColor *)linkTextColor {
     return [UIColor colorWithRed:0.451 green:0.529 blue:0.643 alpha:1.0];
 }
@@ -177,4 +197,15 @@ static UVStyleSheet *styleSheet;
     return nil;
 }
 
+- (UIColor *)helpfulBarTextColor {
+    return [UIColor colorWithRed:0.41f green:0.42f blue:0.43f alpha:1.0f];
+}
+
+- (UIColor *)helpfulBarYesButtonTint {
+    return [UIColor colorWithRed:0.42f green:0.64f blue:0.85f alpha:1.0f];
+}
+
+- (UIColor *)helpfulBarNoButtonTint {
+    return [UIColor colorWithRed:0.46f green:0.55f blue:0.66f alpha:1.0f];
+}
 @end

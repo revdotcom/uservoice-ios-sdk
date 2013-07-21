@@ -35,6 +35,7 @@
     cell.backgroundColor = [UIColor whiteColor];
     UVCategory *category = (UVCategory *)[self.categories objectAtIndex:indexPath.row];
     cell.textLabel.text = category.name;
+    cell.textLabel.textColor = [UVStyleSheet tableViewCellTextColor];
     if (self.selectedCategory && self.selectedCategory.categoryId == category.categoryId) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
