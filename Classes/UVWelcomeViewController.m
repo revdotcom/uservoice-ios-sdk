@@ -297,7 +297,7 @@
             flashTitleLabel.text = [UVSession currentSession].flashTitle;
             flashMessageLabel.text = [UVSession currentSession].flashMessage;
             if ([UVSession currentSession].flashSuggestion) {
-                flashView.frame = CGRectMake(0, searchY, scrollView.bounds.size.width, 140);
+                flashView.frame = CGRectMake(0, searchY, scrollView.bounds.size.width, 170);
             } else {
                 flashView.frame = CGRectMake(0, searchY, scrollView.bounds.size.width, 80);
             }
